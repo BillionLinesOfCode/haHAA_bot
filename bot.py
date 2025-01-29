@@ -32,13 +32,13 @@ async def grok(ctx, *, question):
     completion = grok_client.chat.completions.create(
         model="grok-2-latest",
         messages=[
-            {"role": "system", "content": "You are Grok, a  know-all chatbot that is answering questions from discord users. Keep responces as breif as possible. no extra wording in responces if an image is requested"},
+            {"role": "system", "content": "You are Grok, a  know-all chatbot that is answering questions from discord users. Keep responces as breif as needed."},
             {"role": "user", "content": question},
         ],
     )
     await ctx.reply(completion.choices[0].message.content)
 
-# This code can be enabled when grok API is updated for image generation
+# This code can be enabled when grok API is updated for image geadneration
 # @client.command()
 # async def image(ctx, *, description):
 #     image_responce = grok_client.images.generate(
